@@ -1,11 +1,11 @@
 procs:
   web:
     cwd: .
-    shell: npm run
+    shell: npm run start
   notary:
     cwd: contrib/notary-server
     shell: cargo run --release
     stop: SIGTERM
   websockify:
     cwd: contrib/proxy/websockify
-    shell: ./websockify.js --cert ../../common/fixture/tls/cert1.pem --key ../../common/fixture/tls/privkey1.pem 55688 example.com:443
+    shell: npm i && ./websockify.js --cert ../../common/fixture/tls/cert1.pem --key ../../common/fixture/tls/privkey1.pem 55688 example.com:443

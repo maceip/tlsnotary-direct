@@ -25,6 +25,8 @@ let portInput: HTMLInputElement;
 let connectButton: HTMLButtonElement;
 let echoCheckbox: HTMLInputElement;
 let flushOnEnterCheckbox: HTMLInputElement;
+let notarizeButton: HTMLButtonElement;
+
 
 let socket: TCPSocket | undefined;
 let connection: TCPSocketOpenInfo | undefined;
@@ -105,23 +107,28 @@ function markDisconnected(): void {
 }
 
 async function startTlsnMpc(): Promise<void> {
-try {
-  const proof = await prove('https://example.com', {
-    method: 'GET',
-    headers: {
-      Connection: 'close',
-      Accept: 'application/json',
-      'Accept-Encoding': 'identity',
-    },
-    body: '',
-    maxTranscriptSize: 20000,
-    notaryUrl: 'https://127.0.0.1:7047',
-    websocketProxyUrl: 'ws://127.0.0.1:55688',
-});
+  try {
+    const proof = await prove('https://example.com', {
+      method: 'GET',
+      headers: {
+        Connection: 'close',
+        Accept: 'application/json',
+        'Accept-Encoding': 'identity',
+      },
+      body: '',
+      maxTranscriptSize: 20000,
+      notaryUrl: 'https://127.0.0.1:7047',
+      websocketProxyUrl: 'ws://127.0.0.1:55688',
+    });
 
-// To verify a proof
-const result = await verify(proof);
-console.log(result);
+    // To verify a proof
+    const result = await verify(proof);
+    console.log(result);
+  }
+  catch (e) {
+    console.error(e);
+    return;
+  }
 }
 
 /**
@@ -200,6 +207,10 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
   });
 
+  notarizeButton = document.getElementById('notarize') as HTMLButtonElement;
+  notarizeButton.addEventListener('click', () => {
+    startTlsnMpc();
+  });
   hostInput = document.getElementById('host') as HTMLInputElement;
   portInput = document.getElementById('port') as HTMLInputElement;
   echoCheckbox = document.getElementById('echo') as HTMLInputElement;
