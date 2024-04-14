@@ -1,3 +1,7 @@
+<center><img src="/contrib/common/static/bear.png" style=" width:80px ; height:80px " /></center>
+<center><img src="/contrib/common/static/bear.png" style=" width:80px ; height:80px " /></center>
+
+
 # TLSNotary Direct Socket API Demo for ethDam
 
 - [TLSNotary](https://tlsnotary.org)
