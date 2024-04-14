@@ -3,7 +3,7 @@ procs:
     cwd: .
     shell: npm run
   notary:
-    cwd: contrib/notary
+    cwd: contrib/notary-server
     shell: cargo run --release
     stop: SIGTERM
   websockify:
