@@ -1,6 +1,6 @@
-<center><img src="/contrib/common/static/bear.png" style=" width:80px ; height:80px " /></center>
-<center><img src="/contrib/common/static/bear.png" style=" width:80px ; height:80px " /></center>
-
+<div>
+  <center><img src="/contrib/common/static/bear.png" style=" width:80px ; height:80px " /><img src="/contrib/common/static/dd.png" style=" width:320px ; height:285px " /></center>
+</div>
 
 # TLSNotary Direct Socket API Demo for ethDam
 
