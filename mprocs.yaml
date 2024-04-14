@@ -1,7 +1,7 @@
 procs:
   web:
     cwd: .
-    shell: npm run start
+    shell: npm i && cp node_modules/tlsn-js/build/9e5e59632f6186c90355.wasm assets/ && cp  node_modules/tlsn-js/build/27.js assets/ && npm run start
   notary:
     cwd: contrib/notary-server
     shell: cargo run --release

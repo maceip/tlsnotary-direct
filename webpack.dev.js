@@ -14,13 +14,19 @@
  * limitations under the License.
  */
 
-const { merge } = require('webpack-merge');
+const {merge} = require('webpack-merge');
 const common = require('./webpack.common.js');
 
 module.exports = merge(common, {
   mode: 'development',
   devtool: 'inline-source-map',
   output: {
-    publicPath: ''
+    publicPath: '',
+  },
+  devServer: {
+    headers: [
+      {key: 'Cross-Origin-Embedder-Policy', value: 'require-corp'},
+      {key: 'Cross-Origin-Opener-Policy', value: 'same-origin'}],
+
   },
 });
