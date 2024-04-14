@@ -8,10 +8,13 @@
     "url": "https://github.com/GoogleChromeLabs/telnet-client"
   },
   "dependencies": {
+    "tlsn-js": "^0.1.0-alpha.5.2",
     "xterm": "^4.18.0",
     "xterm-addon-fit": "^0.5.0"
   },
   "devDependencies": {
+    "mprocs": "^0.6.4",
+
     "@typescript-eslint/eslint-plugin": "^5.25.0",
     "@typescript-eslint/parser": "^5.25.0",
     "clean-webpack-plugin": "^4.0.0",
@@ -35,6 +38,7 @@
     "webpack-merge": "^5.8.0"
   },
   "scripts": {
+    "dev": "mprocs",
     "start": "webpack serve --config webpack.dev.js",
     "build": "webpack --config webpack.wbn.js",
     "lint": "eslint src/*.ts"

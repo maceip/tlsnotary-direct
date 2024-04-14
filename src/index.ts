@@ -18,6 +18,7 @@ import {Terminal} from 'xterm';
 import {FitAddon} from 'xterm-addon-fit';
 import 'xterm/css/xterm.css';
 import './style.css';
+import { prove, verify } from 'tlsn-js';
 
 let hostInput: HTMLInputElement;
 let portInput: HTMLInputElement;
@@ -63,6 +64,9 @@ term.onData((data) => {
   writer.releaseLock();
 });
 
+
+
+
 /**
  * Download the terminal's contents to a file.
  */
@@ -98,6 +102,26 @@ function markDisconnected(): void {
   connectButton.textContent = 'Connect';
   connectButton.disabled = false;
   socket = undefined;
+}
+
+async function startTlsnMpc(): Promise<void> {
+try {
+  const proof = await prove('https://example.com', {
+    method: 'GET',
+    headers: {
+      Connection: 'close',
+      Accept: 'application/json',
+      'Accept-Encoding': 'identity',
+    },
+    body: '',
+    maxTranscriptSize: 20000,
+    notaryUrl: 'https://127.0.0.1:7047',
+    websocketProxyUrl: 'ws://127.0.0.1:55688',
+});
+
+// To verify a proof
+const result = await verify(proof);
+console.log(result);
 }
 
 /**
