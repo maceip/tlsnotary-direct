@@ -1,0 +1,3 @@
+[submodule "contrib/proxy"]
+	path = contrib/proxy
+	url = https://github.com/novnc/websockify-js
