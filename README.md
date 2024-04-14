@@ -1,7 +1,8 @@
-# Telnet Demo
+# TLSNotary Direct Socket API Demo for ethDam
 
-This repository contains an
-[Isolated Web App](https://github.com/WICG/isolated-web-apps/blob/main/README.md)
+- [TLSNotary](https://tlsnotary.org)
+enables users to prove data behind google/social logins, and then for anons to verify that data
+- [Isolated Web App](https://github.com/WICG/isolated-web-apps/blob/main/README.md)
 that allows the user to connect to a TCP/IP server through an interactive
 terminal. In other words, a Telnet client. This provides a demonstration of
 the [Direct Sockets API].
