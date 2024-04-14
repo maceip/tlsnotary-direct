@@ -13,6 +13,12 @@ This application is served statically and is cached for offline use. No
 analytics are collected. All communication is directly between the client and
 the remote server specified by the user.
 
+## Demo
+
+```sh
+npm i && npm run dev
+```
+
 ## Building
 
 This project is written in TypeScript and uses npm and Webpack to manage
